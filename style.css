@@ -50,6 +50,25 @@ header {
 .search-bar input { border: none; padding: 10px 20px; flex: 1; outline: none; border-radius: 50px; font-size: 1rem; }
 .search-bar button { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 50px; cursor: pointer; }
 
+.alternative-result {
+    max-width: 760px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text);
+    border-radius: 14px;
+    padding: 14px 18px;
+    text-align: left;
+    min-height: 52px;
+    box-shadow: var(--shadow);
+}
+
+.alternative-result strong { color: var(--primary); }
+
+.alternative-result .empty {
+    color: #5f6f7f;
+    font-style: italic;
+}
+
 /* Controls & Map */
 .controls { text-align: center; padding: 50px 0 20px; }
 .filter-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
@@ -80,3 +99,24 @@ header {
 .tag { font-size: 0.7rem; text-transform: uppercase; background: #eee; padding: 3px 8px; border-radius: 5px; }
 
 footer { text-align: center; padding: 40px; background: var(--primary); color: white; margin-top: 50px; }
+
+@media (max-width: 768px) {
+    .hero-content h1 { font-size: 2rem; padding: 0 16px; }
+
+    .search-bar {
+        flex-direction: column;
+        border-radius: 20px;
+        margin: 20px 16px;
+        gap: 8px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .alternative-result {
+        margin: 0 16px;
+    }
+}

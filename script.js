@@ -20,6 +20,40 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r
 
 let markers = [];
 
+// Equivalences: produit de base importe -> propriete cosmetique cible.
+const importedProducts = [
+    {
+        keys: ["cafe", "cafe vert", "coffee"],
+        label: "Cafe",
+        property: "tonifiant",
+        localAlternatives: ["Le myrte en Provence", "Immortelle"]
+    },
+    {
+        keys: ["cacao", "cocoa"],
+        label: "Cacao",
+        property: "nourrissant",
+        localAlternatives: ["Chanvre Bio", "Glycérine de colza"]
+    },
+    {
+        keys: ["karite", "beurre de karite", "shea"],
+        label: "Beurre de karite",
+        property: "hydratant",
+        localAlternatives: ["Chanvre Bio", "Glycérine de colza"]
+    },
+    {
+        keys: ["aloe", "aloe vera"],
+        label: "Aloe vera",
+        property: "apaisant",
+        localAlternatives: ["Calendula", "Lavande Vraie", "Verveine en Provence"]
+    },
+    {
+        keys: ["argan", "huile d argan", "huile d'argan"],
+        label: "Huile d'argan",
+        property: "anti-age",
+        localAlternatives: ["Immortelle", "Le myrte en Provence"]
+    }
+];
+
 // Fonction pour afficher les cartes
 function displayPlants(data) {
     const grid = document.getElementById('plantsGrid');
@@ -66,11 +100,60 @@ function filterByCategory(category) {
 }
 
 // Recherche textuelle
-function filterPlants() {
-    const query = document.getElementById('searchInput').value.toLowerCase();
-    const filtered = plantsData.filter(p => p.name.toLowerCase().includes(query));
-    displayPlants(filtered);
+function normalizeText(value) {
+    return value
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
+}
+
+function renderAlternativeResult(message, isEmpty = false) {
+    const resultBox = document.getElementById('alternativeResult');
+    resultBox.innerHTML = isEmpty ? `<span class="empty">${message}</span>` : message;
+}
+
+function findLocalAlternative() {
+    const query = normalizeText(document.getElementById('searchInput').value);
+
+    if (!query) {
+        displayPlants(plantsData);
+        renderAlternativeResult("Entrez un produit de base (ex: cafe) pour voir une alternative locale.", true);
+        return;
+    }
+
+    const matchedProduct = importedProducts.find((product) =>
+        product.keys.some((key) => normalizeText(key) === query)
+    );
+
+    if (!matchedProduct) {
+        displayPlants([]);
+        renderAlternativeResult("Aucune equivalence connue pour ce produit. Essayez: cafe, cacao, karite, aloe, argan.", true);
+        return;
+    }
+
+    const alternatives = plantsData.filter((plant) => {
+        const normalizedPlantName = normalizeText(plant.name);
+        return matchedProduct.localAlternatives.some(
+            (alternativeName) => normalizeText(alternativeName) === normalizedPlantName
+        );
+    });
+
+    displayPlants(alternatives);
+
+    const alternativeNames = alternatives.map((a) => a.name).join(', ');
+    renderAlternativeResult(
+        `<strong>${matchedProduct.label}</strong> -> alternative locale en France: <strong>${alternativeNames}</strong><br>` +
+        `Propriete cosmetique recherchee: ${matchedProduct.property}.`
+    );
 }
 
 // Lancement initial
 displayPlants(plantsData);
+renderAlternativeResult("Saisissez un produit de base importe pour obtenir une alternative locale en France.", true);
+
+document.getElementById('searchInput').addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        findLocalAlternative();
+    }
+});

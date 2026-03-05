@@ -21,11 +21,12 @@
     <header>
         <div class="hero-content">
             <h1>L'annuaire des plantes cosmétiques de France</h1>
-            <p>Identifiez les ressources végétales proches de chez vous pour une cosmétique durable et transparente.</p>
+            <p>Trouvez une alternative locale en France a vos matieres premieres importees pour une cosmetique durable et transparente.</p>
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Rechercher une plante (ex: Lavande)...">
-                <button onclick="filterPlants()">Rechercher</button>
+                <input type="text" id="searchInput" placeholder="Produit de base (ex: café)">
+                <button onclick="findLocalAlternative()">Trouver une alternative locale</button>
             </div>
+            <div id="alternativeResult" class="alternative-result" aria-live="polite"></div>
         </div>
     </header>
 
