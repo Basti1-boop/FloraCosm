@@ -1,0 +1,82 @@
+:root {
+    --primary: #3d5a44;
+    --accent: #8da683;
+    --bg: #fcfbf7;
+    --text: #2c3e50;
+    --white: #ffffff;
+    --shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background: var(--white);
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--accent); }
+.nav-links a { text-decoration: none; color: var(--text); margin-left: 2rem; font-weight: 500; font-size: 0.9rem; }
+.cta-nav { background: var(--primary); color: white !important; padding: 8px 20px; border-radius: 20px; }
+
+/* Hero Section */
+header {
+    height: 70vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1596003906949-67221c37965c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 { font-size: 3.5rem; max-width: 800px; margin-bottom: 20px; }
+.search-bar { background: white; padding: 10px; border-radius: 50px; display: flex; max-width: 600px; margin: 30px auto; }
+.search-bar input { border: none; padding: 10px 20px; flex: 1; outline: none; border-radius: 50px; font-size: 1rem; }
+.search-bar button { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 50px; cursor: pointer; }
+
+/* Controls & Map */
+.controls { text-align: center; padding: 50px 0 20px; }
+.filter-group { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.filter-btn { 
+    border: 1px solid var(--accent); background: transparent; padding: 8px 20px; 
+    border-radius: 20px; cursor: pointer; transition: 0.3s; 
+}
+.filter-btn.active, .filter-btn:hover { background: var(--accent); color: white; }
+
+#map { height: 500px; margin: 20px 8%; border-radius: 20px; z-index: 1; }
+
+/* Grid des plantes */
+.container { padding: 50px 8%; }
+.plants-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 30px; margin-top: 30px; 
+}
+
+.plant-card {
+    background: white; border-radius: 15px; overflow: hidden;
+    box-shadow: var(--shadow); transition: transform 0.3s;
+}
+.plant-card:hover { transform: translateY(-10px); }
+.plant-img { height: 180px; background-size: cover; background-position: center; }
+.plant-info { padding: 20px; }
+.plant-info h3 { color: var(--primary); margin-bottom: 5px; }
+.tag { font-size: 0.7rem; text-transform: uppercase; background: #eee; padding: 3px 8px; border-radius: 5px; }
+
+footer { text-align: center; padding: 40px; background: var(--primary); color: white; margin-top: 50px; }
