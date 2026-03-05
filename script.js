@@ -3,7 +3,10 @@ const plantsData = [
     { id: 1, name: "Lavande Vraie", cat: "apaisant", region: "Provence", coords: [44.15, 5.40], img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Lavandula-angustifolia-flowering.JPG", desc: "Idéale pour calmer les irritations cutanées." },
     { id: 2, name: "Chanvre Bio", cat: "hydratant", region: "Bretagne", coords: [48.20, -2.93], img: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Chanvre.jpg", desc: "Huile riche en oméga-3 pour une peau souple." },
     { id: 3, name: "Calendula", cat: "apaisant", region: "Anjou", coords: [47.47, -0.55], img: "https://upload.wikimedia.org/wikipedia/commons/b/b2/Calendula_officinalis1.jpg", desc: "Le soin par excellence des peaux fragiles." },
-    { id: 4, name: "Immortelle", cat: "anti-age", region: "Corse", coords: [42.15, 9.12], img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Helichrysum_italicum_subsp_microphyllum_g08.jpg", desc: "Stimule la régénération cellulaire." }
+    { id: 4, name: "Immortelle", cat: "anti-age", region: "Corse", coords: [42.15, 9.12], img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Helichrysum_italicum_subsp_microphyllum_g08.jpg", desc: "Stimule la régénération cellulaire." },
+    { id: 5, name: "Huile essentielle de sapin pectiné au Drôme", cat: "apaisant", region: "Drôme", coords: [44.73, 5.37], img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Illustration_Abies_alba0_clean.jpg", desc: "Huile essentielle de sapin pectiné reconnue pour ses notes fraîches et réconfortantes." },
+    { id: 6, name: "Huile essentielle de Sapin pectiné en Lozère", cat: "apaisant", region: "Lozère", coords: [44.52, 3.50], img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Illustration_Abies_alba0_clean.jpg", desc: "Variété locale de sapin pectiné utilisée dans des formules cosmétiques naturelles." },
+    { id: 7, name: "Le myrte en Provence", cat: "anti-age", region: "Provence", coords: [43.95, 5.64], img: "https://upload.wikimedia.org/wikipedia/commons/d/d0/%28MHNT%29_Myrtus_communis_subsp._tarentina.jpg", desc: "Le myrte est apprécié pour ses propriétés tonifiantes et purifiantes." }
 ];
 
 // Initialisation Carte
