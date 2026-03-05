@@ -7,7 +7,8 @@ const plantsData = [
     { id: 5, name: "Huile essentielle de sapin pectiné au Drôme", cat: "apaisant", region: "Drôme", coords: [44.73, 5.37], img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Illustration_Abies_alba0_clean.jpg", desc: "Huile essentielle de sapin pectiné reconnue pour ses notes fraîches et réconfortantes." },
     { id: 6, name: "Huile essentielle de Sapin pectiné en Lozère", cat: "apaisant", region: "Lozère", coords: [44.52, 3.50], img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Illustration_Abies_alba0_clean.jpg", desc: "Variété locale de sapin pectiné utilisée dans des formules cosmétiques naturelles." },
     { id: 7, name: "Le myrte en Provence", cat: "anti-age", region: "Provence", coords: [43.95, 5.64], img: "https://upload.wikimedia.org/wikipedia/commons/d/d0/%28MHNT%29_Myrtus_communis_subsp._tarentina.jpg", desc: "Le myrte est apprécié pour ses propriétés tonifiantes et purifiantes." },
-    { id: 8, name: "Verveine en Provence", cat: "apaisant", region: "Provence", coords: [43.84, 5.04], img: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Illustration_Verbena_officinalis0.jpg", desc: "La verveine est recherchée pour ses vertus calmantes et adoucissantes." }
+    { id: 8, name: "Verveine en Provence", cat: "apaisant", region: "Provence", coords: [43.84, 5.04], img: "https://upload.wikimedia.org/wikipedia/commons/6/6d/Illustration_Verbena_officinalis0.jpg", desc: "La verveine est recherchée pour ses vertus calmantes et adoucissantes." },
+    { id: 9, name: "Glycérine de colza", cat: "hydratant", region: "Centre-Val de Loire", coords: [47.90, 1.90], img: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Brassica_napus_%E2%80%94_Flora_Batava_%E2%80%94_Volume_v4.jpg", desc: "Issue du colza, cette glycérine végétale aide à maintenir l'hydratation de la peau." }
 ];
 
 // Initialisation Carte
